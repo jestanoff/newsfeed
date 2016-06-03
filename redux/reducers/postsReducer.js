@@ -15,7 +15,11 @@ const postsReducer =  function(state = {}, action) {
         //         lastUpdated: action.receivedAt
         //     })
         case 'FETCH_POSTS_DATA':
-            return [...action.posts]
+            return Object.assign({}, state, {
+                isFetching: true,
+                didInvalidate: false,
+                items: [...action.posts]
+            })
         default:
             return state;
 

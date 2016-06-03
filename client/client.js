@@ -5,12 +5,18 @@ import configureStore from '../redux/store'
 import { Provider } from 'react-redux'
 
 let initialState = {
-    isFetching: false,
-    didInvalidate: false,
-    lastUpdated: Date.now(),
-    fetchedPageCount: 0,
-    posts: [],
-    comments: []
+    posts: {
+        isFetching: false,
+        didInvalidate: false,
+        lastUpdated: Date.now(),
+        items: []
+    },
+    comments: {
+        isFetching: false,
+        didInvalidate: false,
+        lastUpdated: Date.now(),
+        items: []
+    }
 }
 
 let store = configureStore(initialState)

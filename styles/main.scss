@@ -146,6 +146,10 @@ header.logo {
         .comment header {
             margin-bottom: 7px;
         }
+
+        .comment-content br+br {
+            display: none;
+        }
     }
 
     .inner-post {

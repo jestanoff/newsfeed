@@ -9,8 +9,8 @@ class App extends Component {
     render() {
           return (
             <div>
-                <NewsFeed posts={this.props.posts}
-                    actions={this.props.actions } comments={this.props.actions} />
+                <NewsFeed posts={this.props.posts.items}
+                    actions={this.props.actions } comments={this.props.comments.items} />
             </div>
         )
     }

@@ -23,7 +23,8 @@ module.exports = {
                 loader: 'babel-loader',
                 exlude: /node_modules/,
                 query: {
-                    presets: ['react', 'es2015', 'react-hmre']
+                    presets: ['react', 'es2015', 'react-hmre'],
+                    compact: false
                 }
             },
             {

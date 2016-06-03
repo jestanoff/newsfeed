@@ -1,6 +1,11 @@
 import React, { Component } from "react"
 
 export default class CommentsCounter extends React.Component {
+
+    handleCommentsClick(event) {
+        this.props.actions.fetchCommentsData();
+    }
+
     render() {
         const { comments_count } = this.props.post;
 
@@ -8,7 +13,7 @@ export default class CommentsCounter extends React.Component {
             return (
                 <div className="comments-counter">
                     <i className="fa fa-comments-o" aria-hidden="true"></i>
-                    <span className="comments-counter-link">
+                    <span className="comments-counter-link" onClick={this.handleCommentsClick.bind(this)}>
                     {
                         comments_count > 2 ? comments_count - 2 + ' more comments' : ''
                     }

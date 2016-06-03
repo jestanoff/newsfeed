@@ -1,17 +1,13 @@
-let commentsReducer =  function(comment = {}, action) {
+let commentsReducer =  function(state = {}, action) {
     switch (action.type) {
-        case 'CREATE_USER_ID':
-            return {
-                author: comment.author,
-                id: comment.id,
-                relative_id: comment.relative_id,
-                body: comment.body,
-                posted_at: comment.posted_at,
-                updated_at: comment.updated_at,
-                author_avatar: comment.author_avatar,
-            }
+        case 'FETCH_COMMENTS_DATA':
+            return Object.assign({}, state, {
+                isFetching: true,
+                didInvalidate: false,
+                items: [...action.comments]
+            })
         default:
-            return comment;
+            return state;
     }
 }
 
