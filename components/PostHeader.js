@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PostTopics from "./PostTopics"
 import moment from 'moment'
 
 export default class PostHeader extends React.Component {
@@ -6,7 +7,10 @@ export default class PostHeader extends React.Component {
         const { updated_at, subject, author } = this.props.post
         return (
             <header>
-                <h2>{subject}</h2>
+                <h2>
+                    <span>{subject}</span>
+                    <PostTopics actions={this.props.actions} post={this.props.post} />
+                </h2>
                 <div className='subheader'>
                     <img src={author.avatar} alt='avatar' className='avatar' />
                     <span className="author"> {author.display_name} </span>

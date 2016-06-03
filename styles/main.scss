@@ -53,11 +53,20 @@ header.logo {
         padding: 10px 7px;
 
         h2 {
-            font-size: 18px;
-            font-weight: bold;
             border-bottom: 1px solid $light-gray;
             margin: -10px -10px 14px -10px;
             padding: 10px 7px;
+            line-height: 18px;
+        }
+
+        h2 > span {
+            font-size: 18px;
+        }
+
+        h2 .topics {
+            margin-top: 3px;
+            font-size: 13px;
+            font-weight: bold;
         }
 
         content {
@@ -129,14 +138,15 @@ header.logo {
         }
 
         .comments-counter .fa {
-            margin-right: 5px;
+            margin-right: 1px;
         }
 
         .comments-counter-link {
             margin-left: 5px;
         }
 
-        .no-more-comments {
+        .no-more-comments .fa{
+            margin-right: 5px;
         }
 
         .comment {
@@ -165,6 +175,12 @@ header.logo {
             cursor: pointer;
             font-size: 12px;
         }
+
+        .topic {
+            margin-right: 2px;
+            font-style: italic;
+        }
+
     }
 
     .inner-post {

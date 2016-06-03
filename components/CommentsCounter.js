@@ -25,7 +25,7 @@ export default class CommentsCounter extends React.Component {
             return (
                 <div className='comments-counter no-more-comments'>
                     <i className="fa fa-comments-o" aria-hidden="true"></i>
-                     comments
+                    comments
                 </div>
             )
         } else {
