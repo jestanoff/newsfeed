@@ -13,10 +13,11 @@ export default class CommentsList extends React.Component {
         const { comments } = this.props.post;
         return (
             <div className="comments-list">
-                {
+                { comments.length ?
                     comments.map( (comment) => {
                         return this.validateCommentContent(comment)
                     })
+                : <a href="#" className="btn btn-default btn-xs"> Add comment </a>
                 }
             </div>
         )

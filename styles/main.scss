@@ -102,13 +102,15 @@ header.logo {
         }
 
         time {
+            font-size: 13px;
             color: #999;
             float: right;
             position: relative;
-            top: 11px;
+            top: 15px;
         }
 
         .tags {
+            font-size: 13px;
             margin: 7px -10px 0;
             padding: 3px 10px;
             border: {

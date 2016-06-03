@@ -30,7 +30,6 @@ export default class Comment extends React.Component {
                     <time dateTime={updated_at}>
                     {
                         (moment(updated_at).startOf('hour').fromNow())
-                            .replace(/ ago/ig, '')
                             .replace(/month/ig, 'mnth')
                             .replace(/hour/ig, 'hr')
                             .replace(/minute/ig, 'min')
