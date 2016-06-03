@@ -11,3 +11,5 @@
 ### Running the server
 
 ```npm run serve```
+
+after that the dev server should be accesible on `http://localhost:3333`
