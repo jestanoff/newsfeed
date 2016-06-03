@@ -1,8 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700);
 
 $screen-sm-min: 768px;
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
+$light-gray: #eee;
+$dark-gray: #333;
 
 body,
 html {
@@ -20,7 +22,7 @@ body {
 }
 
 header.logo {
-    background: #333;
+    background: $dark-gray;
     margin-bottom: 2em;
     min-height: 80px;
 
@@ -43,23 +45,28 @@ header.logo {
 
     article {
         flex-grow: 1;
-        background: white;
         padding: 10px 7px;
 
         h2 {
             font-size: 18px;
             font-weight: bold;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid $light-gray;
             margin: -10px -10px 14px -10px;
             padding: 10px 7px;
+        }
+
+        content {
+            display: block;
+            margin-bottom: 7px;
+            width: 100%;
         }
 
         content p {
             line-height: 20px;
         }
 
-        content > br {
-            margin-bottom: 10px;
+        content br+br {
+            display: none;
         }
 
         .subheader {
@@ -84,13 +91,68 @@ header.logo {
             color: #999;
             float: right;
             position: relative;
-            top: 14px;
+            top: 11px;
+        }
+
+        .tags {
+            margin: 7px -10px 0;
+            padding: 3px 10px;
+            border: {
+                top: 1px solid $light-gray;
+                bottom: 1px solid $light-gray;
+            }
+        }
+
+        .no-tags {
+            display: none;
+        }
+
+        .tag {
+            font-style: italic;
+            margin-right: 5px;
+        }
+
+        .fa-tags {
+            margin-right: 5px;
+        }
+
+        .comments-counter {
+            margin: 0 -10px 10px;
+            padding: 5px 10px;
+            background: $light-gray;
+            cursor: pointer;
+        }
+
+        .comments-counter-link {
+            margin-left: 5px;
+        }
+
+        .no-more-comments {
+        }
+
+        .comment {
+            margin-top: 7px;
+        }
+
+        .comment:first-child .comment-hr{
+            display: none;
+        }
+
+        .comment-hr {
+            border-top: 1px solid $light-gray;
+            margin: 0 -10px 7px;
+        }
+
+        .comment header {
+            margin-bottom: 7px;
         }
     }
 
     .inner-post {
-        border: 1px solid #eee;
+        border: 1px solid $light-gray;
         padding: 10px;
         border-radius: 4px;
+        overflow: hidden;
     }
+
 }

@@ -14,8 +14,8 @@ export default class Post extends React.Component {
                     <PostHeader actions={this.props.actions} post={this.props.post} />
                     <PostBody actions={this.props.actions} post={this.props.post} />
                     <PostTags actions={this.props.actions} post={this.props.post} />
-                    <CommentsList/>
-                    <CommentsCounter />
+                    <CommentsCounter actions={this.props.actions} post={this.props.post} />
+                    <CommentsList actions={this.props.actions} post={this.props.post} />
                 </div>
             </article>
         )
