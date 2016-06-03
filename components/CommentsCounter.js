@@ -21,8 +21,17 @@ export default class CommentsCounter extends React.Component {
                     </span>
                 </div>
             )
+        } else if ( comments_count > 0 && comments_count <= 2 ) {
+            return (
+                <div className='comments-counter no-more-comments'>
+                    <i className="fa fa-comments-o" aria-hidden="true"></i>
+                     comments
+                </div>
+            )
         } else {
-            return <div className='comments-counter no-more-comments'>comments</div>;
+            return (
+                <div className='comments-counter no-more-comments'>No comments</div>
+            )
         }
     }
 }

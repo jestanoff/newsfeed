@@ -3,9 +3,24 @@ import moment from 'moment';
 import _ from 'lodash'
 
 export default class Comment extends React.Component {
+    constructor() {
+        super();
+        this.state = { showMoreLink: true }
+        this.handleMoreLinkClick = this.handleMoreLinkClick.bind(this);
+    }
+
+    handleMoreLinkClick() {
+        this.setState({ showMoreLink : false });
+    }
 
     render() {
-        const { author, updated_at, body} = this.props.comment;
+        let { author, updated_at, body} = this.props.comment;
+        let showMoreLink = this.state.showMoreLink;
+        if(showMoreLink) {
+            body = _.truncate(body, {'length': 150})
+        }
+        if(body.length < 150) { showMoreLink = false }
+
         return (
             <div className="comment">
                 <hr className="comment-hr" />
@@ -23,8 +38,10 @@ export default class Comment extends React.Component {
                     </time>
                 </header>
                 <div className="comment-content" dangerouslySetInnerHTML={
-                    {__html: _.truncate(body, {'length': 150}) }} />
-                <span className="more-link">[ more ]</span>
+                    {__html: body }} />
+                {showMoreLink ?
+                    <span className="more-link" onClick={this.handleMoreLinkClick}>[show more]</span>
+                 : ''}
             </div>
         )
     }
